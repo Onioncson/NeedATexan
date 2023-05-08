@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!--
+Name: Frankie E Moncada
+Name of file: homework4.html
+Date created: 2023-02-02
+Date last edited: 2023-05-08
+Description: This is assignment four where I create a form for employment.
+-->
+<html lang="en">
+<head> 
+    <link rel="stylesheet" href="homework4.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeedATexan</title>
+</head>
+<!--
+    The code above is the head/boilerplate of the HTML file; it acts as a brain. 
+-->
+<div class="logo-container">
+    <img class="logo" src="My_project.png" alt="my Logo">
+</div>
+<!--
+    The first div tag above has my img class for my logo. 
+-->   
+<body class="body1">
+    <section class="header" id="myHeader">
+        <table class="table1">
+            <tr>
+                <th> <a href="https://giving.uh.edu/gift/">Donate to NAT</a> </th>
+                <th> <a href="https://www.depop.com/tubofstuff/">Shop/Services</a> </th>
+
+                <th> <a href="https://www.misso.org">Partner with Us</a> </th>
+
+                <th> <a href="https://needatexan.my.canva.site/#page-2">About NAT</a> </th>
+                <th> <a href="https://www.linkedin.com/in/frankie-moncada-/">Message an Agent</a> </th>
+            </tr>
+        </table>
+    </section>
+    <span id="helloworld"></span>
+<form id="Review" action="thankyou4.html" onsubmit= "return checkValidations()">
+<!--
+    Above the <form>, I have the beginning of my body, which has a Nav bar with different embedded links to other sites.
+-->
+    <h1>Apply Here!</h1>
+
+    <h2> Today's date: <legend><span id="datestuff"></span></legend></h2>
+
+    <div class="myDiv">
+    <p><li>This form does not require a resume; after pressing submit, 
+    you will be redirected to the NAT job database. You can view available openings 
+    where you can individually apply with your credentials. Note* Access to the portal 
+    is in view mode only and will unlock after account approval from an agent.
+    </li></p>
+    </div>
+<!--
+   A paragraph dedicated to explaining the process after submitting the form. Along with two headers, 
+   one with "Apply Here!" and the other that allows today's date to be displayed.
+-->
+<fieldset>
+<table class="table2"> 
+    <tr> 
+        <td><label for="firstname">First Name:</label></td> <td><input type="text" name="First Name:" pattern="^[a-zA-Z'-]+$"
+        title="Letters, apostrophes and dashes only" id="firstName" placeholder="Ricky (required)" maxlength="30" required onkeyup="return firstNameValidation()"> <br>
+        <span class="alert" id="firstNameAlert"> </span> </td>
+
+    </tr> 
+    <tr> <td><label for="middleinitial">Middle Initial:</label></td> <td><input type="text" name="Middle initial:" placeholder="A-Z" pattern="^[a-zA-Z]+$"
+        title="Please enter only one letter for your middle initial" id="middleinitial" maxlength="1" onkeyup="return mNameValidation()">
+    <span class="alert" id="middleinitialAlert"></span> </td> 
+    </tr> 
+    <tr> 
+        <td><label for="lastname">Last Name:</label></td> <td><input type="text" name="Last Name:" pattern="[a-zA-Z'-]+( the (2nd|3rd|4th|5th)){0,1}(\|\|\|\|\|){0,1}"
+        title="Letters, apostrophes and dashes only" id="lastName" placeholder="Bobby (required)" maxlength="30" required onkeyup="return lastNameValidation()"> <br> 
+        <span class="alert" id="lastNameAlert"> </span> </td>
+    </tr>
+<tr><td><label for="suffix">Suffix:</label></td>
+    <td><select id="suffix" name="Suffix:">
+    <option value=""></option>
+    <option value="Mr.">Mr.</option>
+    <option value="Ms.">Ms.</option>
+    <option value="Mrs.">Mrs.</option>
+    <option value="Sr.">Sr.</option>
+    <option value="Jr.">Jr.</option>
+    <option value="The 1st">I</option>
+    <option value="The 2nd">II</option>
+    <option value="The 3rd">III</option>
+    <option value="The 4th">IV</option>
+    <option value="The 5th">V</option>
+    </select></td>
+
+</tr> 
+    <tr> <td><label for="dob">Date of Birth (MM/DD/YYYY):</label></td> <td><input type="date" name="Date of Birth:" id="dob" onblur="return dobValidation() " min="1903-01-01" required>
+        <span class="alert" id="dobAlert"> </span> </td> 
+    </tr> 
+
+    <tr> <td><label for="ssn">Social Security Number(SSN):</label></td> <td><input type="password" name="SSN:" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" 
+        title="numbers only" id="ssn" placeholder="xxx-yy-zzzz" minlength="9" maxlength="9" required onkeyup="return ssnValidation()">
+        <span class = "alert" id="ssnAlert"></span></td> 
+    </tr>   
+    <tr> <td><label for="address1">Address Line 1:</label></td> <td><input type="address" name="Address Line 1:" pattern="[a-zA-Z0-9\s\.\#\-]*" 
+        title= "please enter a valid address" id="address1" placeholder="4567 M St (required)" min="2" maxlength="30" required></td> </tr> 
+    <tr> <td><label for="address2">Address Line (Alt):</label></td> <td><input type="address" name="Address Line (Alt):" pattern="[a-zA-Z0-9\s\.\#\-]*" 
+        title= "please enter a valid address" id="address2" placeholder="Apt #, etc. (required)" min="2" maxlength="30" ></td> </tr> 
+    <tr> <td><label for="city">City:</label></td> <td><input type="text" name="City:" id="city" placeholder="Anytown (required)" min="2" maxlength="30" required></td> </tr> 
+    <tr> <td><label for="state">State:</label></td> <td><select name="State:" id="state">
+    <option value=""></option>
+    <option value="AL">Alabama</option>
+	<option value="AK">Alaska</option>
+	<option value="AZ">Arizona</option>
+	<option value="AR">Arkansas</option>
+	<option value="CA">California</option>
+	<option value="CO">Colorado</option>
+	<option value="CT">Connecticut</option>
+	<option value="DE">Delaware</option>
+	<option value="DC">District Of Columbia</option>
+	<option value="FL">Florida</option>
+	<option value="GA">Georgia</option>
+	<option value="HI">Hawaii</option>
+	<option value="ID">Idaho</option>
+	<option value="IL">Illinois</option>
+	<option value="IN">Indiana</option>
+	<option value="IA">Iowa</option>
+	<option value="KS">Kansas</option>
+	<option value="KY">Kentucky</option>
+	<option value="LA">Louisiana</option>
+	<option value="ME">Maine</option>
+	<option value="MD">Maryland</option>
+	<option value="MA">Massachusetts</option>
+	<option value="MI">Michigan</option>
+	<option value="MN">Minnesota</option>
+	<option value="MS">Mississippi</option>
+	<option value="MO">Missouri</option>
+	<option value="MT">Montana</option>
+	<option value="NE">Nebraska</option>
+	<option value="NV">Nevada</option>
+	<option value="NH">New Hampshire</option>
+	<option value="NJ">New Jersey</option>
+	<option value="NM">New Mexico</option>
+	<option value="NY">New York</option>
+	<option value="NC">North Carolina</option>
+	<option value="ND">North Dakota</option>
+	<option value="OH">Ohio</option>
+	<option value="OK">Oklahoma</option>
+	<option value="OR">Oregon</option>
+	<option value="PA">Pennsylvania</option>
+    <option value="PR">Puerto Rico</option>
+	<option value="RI">Rhode Island</option>
+	<option value="SC">South Carolina</option>
+	<option value="SD">South Dakota</option>
+	<option value="TN">Tennessee</option>
+	<option value="TX">Texas</option>
+	<option value="UT">Utah</option>
+	<option value="VT">Vermont</option>
+	<option value="VA">Virginia</option>
+	<option value="WA">Washington</option>
+	<option value="WV">West Virginia</option>
+	<option value="WI">Wisconsin</option>
+	<option value="WY">Wyoming</option>
+    </select></td> </tr> 
+    <tr> <td><label for="zipcode">Zipcode:</label></td> <td><input type="text" name="Zipcode:" pattern="^\d{5}(-\d{4})?$" 
+        title="Please enter a valid zip code (5 digits)" id="zipcode" placeholder="00000" minlength="5" maxlength="5" required>
+        <span class="alert" id="zipAlert"></span></td> 
+    </tr>
+      
+    <tr>
+        <td><label for="email">Email:</label></td> <td><input type="email" name="Email:"
+        title="Email Validation - Please enter a valid email address" id="email" placeholder="name@domain.tld" required onkeyup="return emailValidation()"> <br> 
+        <span class="alert" id="emailAlert"> </span> </td>
+    </tr>
+    <tr> <td><label for="phonenumber">Phone Number:</label></td> <td><input type="tel" name="Phone Number:"  
+        title="Please enter a valid phone number (XXX-XXX-XXXX)" id="phonenumber" placeholder="(XXX) XXX-XXXX" minlength="10" 
+        maxlength="14" required onkeyup="return phoneValidation()">
+    <span class="alert" id="phoneAlert"></span></td> </tr>
+
+</table>   
+</fieldset>
+<!--
+    A second table where I placed my user input boxes so that it is cleaner and more organized; 
+    most of the boxes are required in order to have a complete submission. With a state drop-down.
+-->
+
+<fieldset>
+    <label for="userID">UserID:</label><br>
+    <input type="text" name="UserID:" onchange="userValidation()" pattern="(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[!@#%^&()-_=+|[]{};:'/?`~])(?!.[']).{8,20}"
+    title="userID must be between 5-20 characters, start with a letter or underscore/dash, and contain only letters, numbers, underscore or dash." 
+    id="userID" minlength="5" maxlength="20" required>
+    <br> <span class="alert" id="userAlert"></span>
+</fieldset>
+
+<fieldset>
+    <label for="userpassword">Password:</label><br>
+    <input type="password" name="Password:" pattern="(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[!@#%^&()-_=+\|[]{};:'/?`~])(?!.[']).{8,30}" 
+    title="Password must be between 8-30 characters and contain at least one uppercase letter, one lowercase letter, one digit, and one special character except quotes." 
+    id="userpassword" minlength="8" maxlength="30" required onkeyup="return passwordValidation()">
+    <br> <span class="alert" id="password-alert" ></span>
+</fieldset>
+
+<fieldset>
+    <label for="userpwconfirm">Confirm Password:</label><br>
+    <input type="password" name="Confirm Password:" pattern="(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[!@#%^&()-_=+\|[]{};:'/?`~])(?!.[']).{8,30}" 
+    title="Password must be between 8-30 characters and contain at least one uppercase letter, one lowercase letter, one digit, and one special character except quotes." 
+    id="userpwconfirm" minlength="8" maxlength="30" required onkeyup="return password2Validation()">
+    <br> <span class="alert" id="password-alert2"></span> 
+</fieldset>
+
+<!--
+    The two fieldsets above are the username and password creators used to log back into the NAT job database.
+-->
+<fieldset>
+    <label>Gender:</label><br>
+    <input type="radio" value="Female" name="Gender"><label for="genderYes"> Female </label>
+    <input type="radio" value="Male" name="Gender"><label for="genderYes"> Male </label>
+    <input type="radio" value="Other" name="Gender"><label for="genderYes"> Other </label>            
+</fieldset>
+
+<fieldset>
+    <label> Are you a native Texan? </label>
+    <input type="checkbox" name="Native Texan?" id="texan"><label for="texan">Yes</label>
+</fieldset>
+
+<fieldset>
+    <label>Are you in need of assistance with your Resume? (Contacted via email if 'Yes')</label><br>
+    <input type="radio" value="Yes" name="Assistance"><label for="resumeYes"> Yes </label>
+    <input type="radio" value="No" name="Assistance"><label for="resumeNo"> No </label>      
+</fieldset>
+    
+<fieldset>
+<label for="D-slider"> Desired Salary Amount: </label>
+            &nbsp;$10000
+<input type="range" id="D-slider" name="Desired Salary" step="1000" min="10000" max="100000" value="10000" oninput="sliderValidation(this.value);"> 
+            $100000&nbsp;
+$<span id="D-value"></span>
+
+</fieldset>
+
+<fieldset>
+    <label> Want a higher paying position? (Contacted via email)</label>
+    <input type="checkbox" name="Higher paying position?" id="more$"><label for="more$">Yes</label>
+</fieldset>
+
+<fieldset>
+    <label> Willing to work overtime? </label>
+    <input type="checkbox" name="Overtime?" id="worktime"><label for="worktime">Yes</label>
+</fieldset>
+
+<fieldset>
+    <label> Computer skills or experience? </label>
+    <input type="checkbox" name="Computer skills or experience?" id="computer"><label for="computer">Yes</label>
+</fieldset>
+
+<fieldset>
+    <label for="textarea">Describe your strengths and weaknesses:</label> <br>
+        <textarea cols="50" rows="3" name="Strengths and Weaknesses:" placeholder="Please give 3 examples of each."></textarea>
+</fieldset>
+
+<fieldset>
+    <label> Subscribe to our newsletter? </label>
+    <input type="checkbox" name="Newsletter?" id="subscription"><label for="subscription">Yes</label>
+</fieldset>
+
+<fieldset>
+    <label>Newsletter frequency:</label>
+    <input type="radio" value="Daily" name="frequency"><label for="oftenYes"> Daily </label>
+    <input type="radio" value="Once a week" name="frequency"><label for="oftenYes"> Once a week </label>      
+</fieldset>
+
+<fieldset>
+    <button type="button" value="Review" onclick="getData()"> Review </button>
+    <button type="reset" value="Clear" id="clear"> Clear </button>
+    <button type="submit" value="Submit" id="submit"> Submit </button>
+    <span class="alert" id="subalert"> </span>
+</fieldset>
+<table id="outputTable">
+
+<thead>
+    
+<tr>
+    
+<th>Data name</th>
+    
+<th>Value</th>
+    
+</tr>
+    
+</thead>
+    
+<tbody id="outputTableBody">
+    
+</tbody>
+    
+</table>
+
+<!--
+    Above is a mixture of 3 radio buttons, 5 checkboxes, a slider for salary,
+    and 3 buttons—the listed code asks various work questions and newsletter signup options.
+-->
+</form>
+
+<iframe src="footer.html" width="1425" title="Page Footer" scrolling="no"></iframe>
+
+<script src="homework4.js"></script>
+<script src="cookies.js"></script>
+</body>
+<!--
+    The end of my form is followed by my footer, which ends the page containing an embedded link to a catchy number.
+-->
+</html>

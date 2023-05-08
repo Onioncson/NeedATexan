@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+    background-image: url('WEBSITE_BG.jpg');
+}
+h1{
+    color: #c23f28be;
+    text-align: center;
+    font-family: 'Georgia', serif;
+}

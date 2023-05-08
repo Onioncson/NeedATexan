@@ -1,0 +1,116 @@
+.body1 {
+    color: #c23e28;
+    text-align: left;
+    color: black;
+    background-image: url('WEBSITE_BG.jpg');
+    background-size: cover;
+    font-family: 'Calibri', sans-serif;
+}
+.logo-container {
+    position: relative;
+    text-align: center;
+    }
+    .logo {
+    width: 350px;
+    height: 150px;
+    margin-top: 50px;
+    }
+form{
+    max-width: 600px;
+    margin: 100px auto;
+    background:#ffffff;
+    border-radius: 4px;
+    border: 10px outset #c23f28be;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+h1{
+    color: #43b4bed2;
+    text-align: center;
+    font-family: 'Georgia', serif;
+}
+h2{
+    text-align: center;
+    font-family: 'Calibri', sans-serif;
+    font-size: larger;
+}
+.myDiv {
+    border: 5px  #bd9a87be;
+    border-style: ridge;
+    width: 98.3%;
+}
+.myDiv li{
+  text-align: auto;
+  font-family: 'Calibri', sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  list-style-type: none;
+}
+.table1{
+    width: 93%;
+    margin: 50px;
+    padding: 20px;
+    background-color: #c23f28be;
+    color: white;
+}
+.table2{
+  text-align: left;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+th{
+    text-decoration: none;
+    text-align: center;
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+fieldset{
+    border-color:#c23f2800;
+    margin-left: 0px;
+}
+button{
+    border-style: ridge;
+    border-color: #c23f28be;
+    color: #43b4bed2;
+    padding: 10px 30px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a:link{
+    color: #ffffff;
+}
+a:visited{
+    color: #ffffff;
+}
+footer{
+    color: #ffffff;
+    background-color: #c23f28be;
+    padding: 7px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.alert{
+color: red;
+font-size: 12px;
+
+}
+
+.header {
+    background-image: url('WEBSITE_BG.jpg');
+    color: #ffffff;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 99%;
+  }
+  
+  .sticky + .content {
+    padding-top: 102px;
+  }
