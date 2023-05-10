@@ -2,7 +2,7 @@
 Name: Frankie E Moncada
 Name of file: homework4.js
 Date created: 2023-03-27
-Date last edited: 2023-05-04
+Date last edited: 2023-05-09
 Description: This is assignment four's JS where I incorporate more Javascript into my website.
 */
 
@@ -38,16 +38,12 @@ function firstNameValidation() {
 }
 
 function mNameValidation() {
-  middleinitialAlert = document.getElementById("middleinitial").value;
-  let namePattern2 = /[A-Z]/;
+  const middleinitialAlert = document.getElementById("middleinitial").value.trim();
+  const namePattern2 = /^[A-Z]{0,1}$/;
 
-  if (!middleinitialAlert.match(namePattern2)) {
+  if (!namePattern2.test(middleinitialAlert)) {
     document.getElementById("middleinitialAlert").innerHTML =
-      "Capital Letters Only.";
-    return false;
-  } else if (middleinitialAlert.length !== 1) {
-    document.getElementById("middleinitialAlert").innerHTML =
-      "Middle initial must contain only 1 character.";
+      "Middle initial must be a single capital letter.";
     return false;
   } else {
     document.getElementById("middleinitialAlert").innerHTML = "";
